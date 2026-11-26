@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="theme-color" content="#141523"/>
+  <meta name="description" content="An interactive eight-week learning guide for statistics, experimentation, programming, and applied machine learning."/>
+  <title>Applied Data Science Learning Lab</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%237c72fa'/%3E%3Cpath d='M16 40 28 18l10 17 10-12' stroke='white' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"/>
+  <link rel="stylesheet" href="./styles.css"/>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <div class="brand"><span class="brand-mark">◈</span><span><strong>Applied DS</strong><small>LEARNING LAB</small></span></div>
+      <div class="side-section">WORKSPACE</div>
+      <nav id="nav" aria-label="Sections">
+        <button type="button" class="nav-item active" data-view="overview"><span>◫</span> Overview</button>
+        <button type="button" class="nav-item" data-view="pathway"><span>▤</span> Learning pathway</button>
+        <button type="button" class="nav-item" data-view="resources"><span>⌁</span> Resource library</button>
+        <button type="button" class="nav-item" data-view="practice"><span>◇</span> Practice lab</button>
+        <button type="button" class="nav-item" data-view="flashcards"><span>▧</span> Flashcards</button>
+        <button type="button" class="nav-item" data-view="insights"><span>◷</span> Progress insights</button>
+        <button type="button" class="nav-item" data-view="notes"><span>✎</span> Study notebook</button>
+      </nav>
+      <div class="side-bottom">
+        <div class="privacy"><span class="privacy-dot"></span> Private to this browser<small>Notes and scores aren't sent to GitHub.</small></div>
+        <button type="button" class="theme-button" id="themeToggle">☀ Switch theme</button>
+      </div>
+    </aside>
+    <div class="main-wrap">
+      <header class="topbar">
+        <button type="button" id="mobileMenu" class="mobile-menu" aria-label="Toggle navigation">☰</button>
+        <span class="breadcrumb">LEARNING WORKSPACE <span>/</span> <b id="currentPage">Overview</b></span>
+        <div class="header-actions"><span class="today" id="todayDate"></span><button id="exportTop" class="small-button" type="button">↓ Export data</button></div>
+      </header>
+      <main id="main" tabindex="-1"></main>
+      <footer>Applied Data Science Learning Lab <span>·</span> Learn deeply. Practice deliberately. Build consistently.</footer>
+    </div>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <input type="file" id="importFile" accept=".json,application/json" hidden/>
+</body>
+</html>
